@@ -82,22 +82,17 @@ public class CharacterMove : MonoBehaviour, IEntity, FloorMessage
 
     public void getFloorInfo(SpatialIndex.FLOOR_STATUS state)
     {
-        
-
-
         if (checkWithFloor((int)state, (int)SpatialIndex.FLOOR_STATUS.WATER))
         {
-            speed = 6.0f;
+            speed = 3.0f;
         }
         else if(checkWithFloor((int)state, (int)SpatialIndex.FLOOR_STATUS.LAVA))
         {
-            speed = 6.0f;
-            Debug.Log("AHHH");
-            controller.Move(Vector3.up * 50.0f * Time.deltaTime);
+            speed = 15.0f;
         }
         else
         {
-            speed = 12.0f;
+            speed = 9.0f;
         }
     }
 }
